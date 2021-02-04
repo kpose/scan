@@ -6,7 +6,7 @@ import {SquareCard} from '../../components';
 
 import data from '../../utils/data';
 
-const Scan = () => {
+const Scan = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.heading}>
@@ -15,7 +15,12 @@ const Scan = () => {
       <FlatList
         data={data}
         renderItem={({item}) => (
-          <SquareCard key={item.id} title={item.title} image={item.image} />
+          <SquareCard
+            key={item.id}
+            title={item.title}
+            image={item.image}
+            onPress={() => navigation.navigate('Details')}
+          />
         )}
         keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}

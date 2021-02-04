@@ -12,6 +12,7 @@ import {isIphoneX} from 'react-native-iphone-x-helper';
 import {COLORS} from '../utils';
 
 import {Chat, Scan, Settings} from '../screens';
+import ScanStack from './ScanStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -114,7 +115,7 @@ const HomeBottomTab = () => {
 
       <Tab.Screen
         name="Scan"
-        component={Scan}
+        component={ScanStack}
         options={{
           tabBarIcon: ({focused}) => (
             <Ionicons
