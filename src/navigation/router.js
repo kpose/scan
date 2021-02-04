@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 /* import screens */
 import {Signup, Signin, Welcome, Home, FirstTimeSetup} from '../screens';
+import HomeBottomTab from './HomeBottomTab';
 
 const Stack = createStackNavigator();
 
@@ -16,32 +17,28 @@ function Router() {
         <Stack.Screen
           name="Welcome"
           component={Welcome}
-          options={{gestureEnabled: false}}
-          options={{headerShown: false}}
+          //options={{gestureEnabled: false}}
+          options={{headerShown: false, gestureEnabled: false}}
         />
         <Stack.Screen
           name="Signin"
           component={Signin}
-          options={{gestureEnabled: false}}
-          options={{headerShown: false}}
+          options={{headerShown: false, gestureEnabled: false}}
         />
         <Stack.Screen
           name="Signup"
           component={Signup}
-          options={{gestureEnabled: false}}
-          options={{headerShown: false}}
+          options={{headerShown: false, gestureEnabled: false}}
         />
         <Stack.Screen
           name="Home"
-          component={Home}
-          options={{gestureEnabled: false}}
-          options={{headerShown: false}}
+          component={HomeBottomTab}
+          options={{headerShown: false, gestureEnabled: false}}
         />
         <Stack.Screen
           name="FirstTimeSetup"
           component={FirstTimeSetup}
-          options={{gestureEnabled: false}}
-          options={{headerShown: false}}
+          options={{headerShown: false, gestureEnabled: false}}
         />
       </Stack.Navigator>
     </>

@@ -11,6 +11,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 
 import Router from './src/navigation/router';
+import HomeBottomTab from './src/navigation/HomeBottomTab';
 
 const App = () => {
   return (
