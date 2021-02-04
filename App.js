@@ -9,14 +9,15 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {Signup} from './src/screens';
+import {FirstTimeSetup} from './src/screens';
+import {HorrizontalCard} from './src/components';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.container}>
-        <Signup />
+        <FirstTimeSetup />
       </SafeAreaView>
     </>
   );
