@@ -12,10 +12,23 @@ import styles from './styles';
 import {COLORS} from '../../utils';
 import {LargeButton, Input, Spinner} from '../../components';
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  onClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      handleNavigation();
+    }, 2000);
+  };
+
+  handleNavigation = () => {
+    setLoading(false);
+    navigation.navigate('FirstTimeSetup');
+  };
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView
@@ -62,18 +75,19 @@ const Signup = () => {
         </View>
 
         <View style={styles.button}>
-          <LargeButton title="Login" onPress={console.log('login')} />
+          <LargeButton title="Sign up" onPress={() => onClick()} />
         </View>
       </KeyboardAvoidingView>
 
       <View style={styles.signup}>
-        <Text style={{color: COLORS.BLACK}}> Don't have an account?, </Text>
-        <TouchableWithoutFeedback onPress={console.log('signup')}>
+        <Text style={{color: COLORS.BLACK}}> Already have an account?, </Text>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('Signin')}>
           <Text style={{color: COLORS.WARNING, fontWeight: 'bold'}}>
-            Sign Up{' '}
+            Login{' '}
           </Text>
         </TouchableWithoutFeedback>
       </View>
+      {loading && <Spinner />}
     </View>
   );
 };

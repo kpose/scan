@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.PRIMARY_LIGHT,
+    backgroundColor: COLORS.SEMI_TRANSPARENT,
   },
   indicator: {
     backgroundColor: COLORS.DARK_GRAY,

@@ -8,17 +8,18 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {FirstTimeSetup} from './src/screens';
-import {HorrizontalCard} from './src/components';
+import Router from './src/navigation/router';
 
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.container}>
-        <FirstTimeSetup />
-      </SafeAreaView>
+      <NavigationContainer>
+        <View style={styles.container}>
+          <Router />
+        </View>
+      </NavigationContainer>
     </>
   );
 };

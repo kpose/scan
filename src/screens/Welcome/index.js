@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import {LargeButton} from '../../components';
+import {LargeButton, Spinner} from '../../components';
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
+  const [loading, setLoading] = useState(false);
+
+  onClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      handleNavigation();
+    }, 2000);
+  };
+
+  handleNavigation = () => {
+    setLoading(false);
+    navigation.navigate('FirstTimeSetup');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -13,19 +27,22 @@ const Welcome = () => {
       <Text style={styles.title}>
         Scan and Auto Fill Your Docments With No Hasle
       </Text>
-      <LargeButton title={'Create Account'} />
+      <LargeButton
+        title={'Create Account'}
+        onPress={() => navigation.navigate('Signup')}
+      />
       <View style={styles.loginContainer}>
         <LargeButton
-          title={'Create Account'}
+          title={'Login'}
+          onPress={() => navigation.navigate('Signin')}
           style={{backgroundColor: '#cdd3d4'}}
         />
       </View>
 
-      {/* <LargeButton title={'Continue'} style={{backgroundColor: '#cdd3d4'}} /> */}
-
-      <TouchableOpacity style={styles.button} onPress={console.log('pressed')}>
+      <TouchableOpacity style={styles.button} onPress={() => onClick()}>
         <Text style={styles.buttonText}>Continue without Creating Account</Text>
       </TouchableOpacity>
+      {loading && <Spinner />}
     </SafeAreaView>
   );
 };

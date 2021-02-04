@@ -4,7 +4,7 @@ import styles from './styles';
 
 const HorrizontalCard = (props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={props.onPress}>
       <View style={styles.button}>
         <Image style={styles.image} source={props.image} />
         <Text style={styles.title}>{props.title}</Text>

@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   heading: {
+    marginTop: 50,
     fontWeight: 'bold',
     fontSize: 43,
     padding: 30,
