@@ -9,17 +9,25 @@ import {
   StatusBar,
 } from 'react-native';
 
+import {Signup} from './src/screens';
+
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text>Welcome screen</Text>
+      <SafeAreaView style={styles.container}>
+        <Signup />
       </SafeAreaView>
     </>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //justifyContent: 'center',
+    // alignItems: 'center',
+  },
+});
 
 export default App;
