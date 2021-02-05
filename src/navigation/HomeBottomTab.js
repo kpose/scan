@@ -13,6 +13,7 @@ import {COLORS} from '../utils';
 
 import {Chat, Scan, Settings} from '../screens';
 import ScanStack from './ScanStack';
+import SettingsStack from './SettingsStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -130,7 +131,7 @@ const HomeBottomTab = () => {
 
       <Tab.Screen
         name="Settings"
-        component={Settings}
+        component={SettingsStack}
         options={{
           tabBarIcon: ({focused}) => (
             <FontAwesome

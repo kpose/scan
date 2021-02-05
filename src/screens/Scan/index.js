@@ -19,7 +19,12 @@ const Scan = ({navigation}) => {
             key={item.id}
             title={item.title}
             image={item.image}
-            onPress={() => navigation.navigate('Details')}
+            onPress={() =>
+              navigation.navigate('Details', {
+                title: item.title,
+                image: item.image,
+              })
+            }
           />
         )}
         keyExtractor={(item) => item.id.toString()}
